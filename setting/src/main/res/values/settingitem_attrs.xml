@@ -5,6 +5,8 @@
         <attr name="hsi_title" format="string" />
         <attr name="hsi_subtitle" format="string" />
         <attr name="hsi_right_image" format="reference" />
+        <attr name="hsi_show_right_image" format="boolean" />
+        <attr name="hsi_show_right_text" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="VerticalSettingItem">
