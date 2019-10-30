@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberView">
+        <attr name="nv_circleBg" format="reference" />
+        <attr name="nv_rectBg" format="reference" />
+        <attr name="nv_textSize" format="dimension" />
+        <attr name="nv_paddding" format="dimension" />
+
+        <attr name="nv_textSize_3digit" format="dimension" />
+        <attr name="nv_padding_3digit_horizontal" format="dimension" />
+        <attr name="nv_padding_3digit_vertical" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -45,10 +45,10 @@ public class HorizontalSettingItem extends FrameLayout {
         tvSubTitle = findViewById(R.id.tv_subtitle);
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.HorizontalSettingItem);
-        Drawable leftDrawable = array.getDrawable(R.styleable.HorizontalSettingItem_si_left_image);
-        Drawable rightDrawable = array.getDrawable(R.styleable.HorizontalSettingItem_si_right_image);
-        String title = array.getString(R.styleable.HorizontalSettingItem_si_title);
-        String subtitle = array.getString(R.styleable.HorizontalSettingItem_si_subtitle);
+        Drawable leftDrawable = array.getDrawable(R.styleable.HorizontalSettingItem_hsi_left_image);
+        Drawable rightDrawable = array.getDrawable(R.styleable.HorizontalSettingItem_hsi_right_image);
+        String title = array.getString(R.styleable.HorizontalSettingItem_hsi_title);
+        String subtitle = array.getString(R.styleable.HorizontalSettingItem_hsi_subtitle);
 
         ivLeft.setImageDrawable(leftDrawable);
         tvTitle.setText(title);
