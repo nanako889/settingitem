@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,11 +50,18 @@ public class HorizontalSettingItem extends FrameLayout {
         Drawable rightDrawable = array.getDrawable(R.styleable.HorizontalSettingItem_hsi_right_image);
         String title = array.getString(R.styleable.HorizontalSettingItem_hsi_title);
         String subtitle = array.getString(R.styleable.HorizontalSettingItem_hsi_subtitle);
+        boolean showRightText = array.getBoolean(R.styleable.HorizontalSettingItem_hsi_show_right_text,
+                                                 false);
+        boolean showRightImage = array.getBoolean(R.styleable.HorizontalSettingItem_hsi_show_right_image,
+                                                  false);
 
+        ivRight.setVisibility(showRightImage ? View.VISIBLE : View.GONE);
+        tvSubTitle.setVisibility(showRightText ? View.VISIBLE : View.GONE);
         ivLeft.setImageDrawable(leftDrawable);
         tvTitle.setText(title);
         tvSubTitle.setText(subtitle);
         ivRight.setImageDrawable(rightDrawable);
+
 
         array.recycle();
     }
