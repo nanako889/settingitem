@@ -108,11 +108,11 @@ public class NumberView extends FrameLayout {
         mTvNumber.setText(numberStr);
     }
 
-    public void setmBgCircle(Drawable mBgCircle) {
+    public void setBgCircle(Drawable mBgCircle) {
         this.mBgCircle = mBgCircle;
     }
 
-    public void setmBgRect(Drawable mBgRect) {
+    public void setBgRect(Drawable mBgRect) {
         this.mBgRect = mBgRect;
     }
 
