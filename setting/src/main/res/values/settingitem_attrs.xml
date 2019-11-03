@@ -12,6 +12,8 @@
     <declare-styleable name="VerticalSettingItem">
         <attr name="vsi_top_image" format="reference" />
         <attr name="vsi_title" format="string" />
+        <attr name="vsi_nv_margin_left" format="dimension"/>
+        <attr name="vsi_nv_margin_bottom" format="dimension"/>
     </declare-styleable>
 
 </resources>

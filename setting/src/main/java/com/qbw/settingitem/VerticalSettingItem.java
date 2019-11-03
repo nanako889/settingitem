@@ -17,6 +17,7 @@ public class VerticalSettingItem extends FrameLayout {
 
     private ImageView mIvTop;
     private TextView mTvTitle;
+    private NumberView mNumberView;
 
     public VerticalSettingItem(Context context) {
         super(context);
@@ -38,14 +39,30 @@ public class VerticalSettingItem extends FrameLayout {
         LayoutInflater.from(context).inflate(R.layout.vertical_settingitem_layout, this, true);
         mIvTop = findViewById(R.id.iv_top);
         mTvTitle = findViewById(R.id.tv_title);
+        mNumberView = findViewById(R.id.nv);
 
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.VerticalSettingItem);
-        Drawable topDrawable = array.getDrawable(R.styleable.VerticalSettingItem_vsi_top_image);
-        String title = array.getString(R.styleable.VerticalSettingItem_vsi_title);
+        if (attrs != null) {
+            TypedArray array = context.obtainStyledAttributes(attrs,
+                                                              R.styleable.VerticalSettingItem);
+            Drawable topDrawable = array.getDrawable(R.styleable.VerticalSettingItem_vsi_top_image);
+            String title = array.getString(R.styleable.VerticalSettingItem_vsi_title);
+            int leftMargin = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_nv_margin_left,
+                                                      0);
+            int bottomMargin = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_nv_margin_bottom,
+                                                        0);
+            FrameLayout.LayoutParams params = (LayoutParams) mNumberView.getLayoutParams();
+            params.leftMargin = leftMargin;
+            params.bottomMargin = bottomMargin;
+            mNumberView.setLayoutParams(params);
 
-        mIvTop.setImageDrawable(topDrawable);
-        mTvTitle.setText(title);
+            mIvTop.setImageDrawable(topDrawable);
+            mTvTitle.setText(title);
 
-        array.recycle();
+            array.recycle();
+        }
+    }
+
+    public NumberView getNumberView() {
+        return mNumberView;
     }
 }
