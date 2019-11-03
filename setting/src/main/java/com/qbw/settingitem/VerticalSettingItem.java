@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -56,6 +57,11 @@ public class VerticalSettingItem extends FrameLayout {
             mNumberView.setLayoutParams(params);
 
             mIvTop.setImageDrawable(topDrawable);
+            int titleMarginTop = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_title_margin_top,
+                                                          0);
+            LinearLayout.LayoutParams titleParams = (LinearLayout.LayoutParams) mTvTitle.getLayoutParams();
+            titleParams.topMargin = titleMarginTop;
+            mTvTitle.setLayoutParams(titleParams);
             mTvTitle.setText(title);
 
             array.recycle();
