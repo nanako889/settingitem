@@ -31,6 +31,8 @@ public class NumberView extends FrameLayout {
     private float mTextSize2;
     private float mTextSize3;
 
+    private int mWhenNumberIsZeroVisibility = View.INVISIBLE;
+
     public NumberView(Context context) {
         super(context);
         init(context, null);
@@ -83,7 +85,7 @@ public class NumberView extends FrameLayout {
 
     public void setNumber(int number) {
         mNumber = number;
-        setVisibility(number > 0 ? View.VISIBLE : View.GONE);
+        setVisibility(number > 0 ? View.VISIBLE : mWhenNumberIsZeroVisibility);
         String numberStr = String.valueOf(number);
 
         if (number < 100) {
@@ -150,5 +152,9 @@ public class NumberView extends FrameLayout {
     
     public void setTextColor(int color) {
         mTvNumber.setTextColor(color);
+    }
+
+    public void setWhenNumberIsZeroVisibility(int whenNumberIsZeroVisibility) {
+        mWhenNumberIsZeroVisibility = whenNumberIsZeroVisibility;
     }
 }
