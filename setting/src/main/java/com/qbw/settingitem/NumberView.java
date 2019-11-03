@@ -16,9 +16,9 @@ import android.widget.TextView;
  */
 public class NumberView extends FrameLayout {
     private int mNumber;
-    private TextView tvNumber;
-    private Drawable bgCircle;
-    private Drawable bgRect;
+    private TextView mTvNumber;
+    private Drawable mBgCircle;
+    private Drawable mBgRect;
 
     private int mPadding;
     private int mPaddingH3;
@@ -53,8 +53,8 @@ public class NumberView extends FrameLayout {
             mTextSize = typedArray.getDimension(R.styleable.NumberView_nv_textSize, 20);
             mTextSize2 = typedArray.getDimension(R.styleable.NumberView_nv_textSize_2dight, 20);
             mTextSize3 = typedArray.getDimension(R.styleable.NumberView_nv_textSize_3digit, 20);
-            bgCircle = typedArray.getDrawable(R.styleable.NumberView_nv_circleBg);
-            bgRect = typedArray.getDrawable(R.styleable.NumberView_nv_rectBg);
+            mBgCircle = typedArray.getDrawable(R.styleable.NumberView_nv_circleBg);
+            mBgRect = typedArray.getDrawable(R.styleable.NumberView_nv_rectBg);
             mPadding = (int) typedArray.getDimension(R.styleable.NumberView_nv_paddding, 0);
             mPaddingH3 = (int) typedArray.getDimension(R.styleable.NumberView_nv_padding_3digit_horizontal,
                                                        0);
@@ -70,15 +70,15 @@ public class NumberView extends FrameLayout {
         }
 
 
-        tvNumber = new TextView(context);
+        mTvNumber = new TextView(context);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
                                                                        FrameLayout.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
-        tvNumber.setGravity(Gravity.CENTER);
-        tvNumber.setLayoutParams(params);
-        tvNumber.setTextColor(textColor);
-        tvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
-        addView(tvNumber);
+        mTvNumber.setGravity(Gravity.CENTER);
+        mTvNumber.setLayoutParams(params);
+        mTvNumber.setTextColor(textColor);
+        mTvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+        addView(mTvNumber);
     }
 
     public void setNumber(int number) {
@@ -87,33 +87,33 @@ public class NumberView extends FrameLayout {
         String numberStr = String.valueOf(number);
 
         if (number < 100) {
-            tvNumber.setPadding(mPadding, mPadding, mPadding, mPadding);
-            tvNumber.setBackground(bgCircle);
+            mTvNumber.setPadding(mPadding, mPadding, mPadding, mPadding);
+            mTvNumber.setBackground(mBgCircle);
         } else {
             if (mShowPlusWhen3Dight) {
                 numberStr = "99+";
             }
-            tvNumber.setPadding(mPaddingH3, mPaddingV3, mPaddingH3, mPaddingV3);
+            mTvNumber.setPadding(mPaddingH3, mPaddingV3, mPaddingH3, mPaddingV3);
             if (mChangeBgWhen3Dight) {
-                tvNumber.setBackground(bgRect);
+                mTvNumber.setBackground(mBgRect);
             }
         }
         if (number < 10) {
-            tvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            mTvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
         } else if (number < 100) {
-            tvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize2);
+            mTvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize2);
         } else {
-            tvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize3);
+            mTvNumber.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize3);
         }
-        tvNumber.setText(numberStr);
+        mTvNumber.setText(numberStr);
     }
 
-    public void setBgCircle(Drawable bgCircle) {
-        this.bgCircle = bgCircle;
+    public void setmBgCircle(Drawable mBgCircle) {
+        this.mBgCircle = mBgCircle;
     }
 
-    public void setBgRect(Drawable bgRect) {
-        this.bgRect = bgRect;
+    public void setmBgRect(Drawable mBgRect) {
+        this.mBgRect = mBgRect;
     }
 
     public void setPadding(int padding) {
@@ -146,5 +146,9 @@ public class NumberView extends FrameLayout {
 
     public void setTextSize3(float textSize3) {
         mTextSize3 = textSize3;
+    }
+    
+    public void setTextColor(int color) {
+        mTvNumber.setTextColor(color);
     }
 }

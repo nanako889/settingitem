@@ -2,6 +2,7 @@ package com.example.settingitem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.qbw.settingitem.NumberView;
@@ -18,5 +19,6 @@ public class MainActivity extends AppCompatActivity {
         NumberView numberView = vis.getNumberView();
 
         numberView.setNumber(10);
+        numberView.setTextColor(Color.parseColor("#aa0000"));
     }
 }
