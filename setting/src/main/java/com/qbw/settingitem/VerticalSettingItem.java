@@ -73,11 +73,13 @@ public class VerticalSettingItem extends FrameLayout {
                                                      23);
             mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize);
             int topImageSize = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_top_image_size,
-                                                        0);
-            FrameLayout.LayoutParams paramsImage = (LayoutParams) mIvTop.getLayoutParams();
-            paramsImage.width = topImageSize;
-            paramsImage.height = topImageSize;
-            mIvTop.setLayoutParams(paramsImage);
+                                                        -1);
+            if (topImageSize >= 0) {
+                FrameLayout.LayoutParams paramsImage = (LayoutParams) mIvTop.getLayoutParams();
+                paramsImage.width = topImageSize;
+                paramsImage.height = topImageSize;
+                mIvTop.setLayoutParams(paramsImage);
+            }
 
             array.recycle();
         }
