@@ -2,8 +2,10 @@ package com.qbw.settingitem;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -63,6 +65,19 @@ public class VerticalSettingItem extends FrameLayout {
             titleParams.topMargin = titleMarginTop;
             mTvTitle.setLayoutParams(titleParams);
             mTvTitle.setText(title);
+
+            int titleColor = array.getColor(R.styleable.VerticalSettingItem_vsi_title_color,
+                                            Color.parseColor("#212121"));
+            mTvTitle.setTextColor(titleColor);
+            int titleSize = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_title_size,
+                                                     23);
+            mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize);
+            int topImageSize = (int) array.getDimension(R.styleable.VerticalSettingItem_vsi_top_image_size,
+                                                        0);
+            FrameLayout.LayoutParams paramsImage = (LayoutParams) mIvTop.getLayoutParams();
+            paramsImage.width = topImageSize;
+            paramsImage.height = topImageSize;
+            mIvTop.setLayoutParams(paramsImage);
 
             array.recycle();
         }

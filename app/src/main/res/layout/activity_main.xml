@@ -31,7 +31,9 @@
         app:vsi_top_image="@drawable/pay"
         app:vsi_nv_margin_left="20dp"
         app:vsi_nv_margin_bottom="20dp"
+        app:vsi_top_image_size="160dp"
         app:vsi_title="标题"
+        app:vsi_title_color="#aa0000"
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
