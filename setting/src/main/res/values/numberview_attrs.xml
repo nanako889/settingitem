@@ -12,5 +12,6 @@
         <attr name="nv_show_plus_when_3dight" format="boolean"/>
         <attr name="nv_change_bg_when_3dight" format="boolean"/>
         <attr name="nv_textColor" format="color"/>
+        <attr name="nv_whenCicleSize" format="dimension"/>
     </declare-styleable>
 </resources>

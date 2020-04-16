@@ -20,5 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         numberView.setNumber(10);
         numberView.setTextColor(Color.parseColor("#aa0000"));
+
+        NumberView numberView1 = findViewById(R.id.nv111);
+        numberView1.setNumber(10);
     }
 }

@@ -33,6 +33,11 @@ public class NumberView extends FrameLayout {
 
     private int mWhenNumberIsZeroVisibility = View.INVISIBLE;
 
+    /**
+     * 显示圆形时textview的size
+     */
+    private int mWhenCycleSize;
+
     public NumberView(Context context) {
         super(context);
         init(context, null);
@@ -67,6 +72,8 @@ public class NumberView extends FrameLayout {
             mChangeBgWhen3Dight = typedArray.getBoolean(R.styleable.NumberView_nv_change_bg_when_3dight,
                                                         false);
             textColor = typedArray.getColor(R.styleable.NumberView_nv_textColor, textColor);
+            mWhenCycleSize = (int) typedArray.getDimension(R.styleable.NumberView_nv_whenCicleSize,
+                                                           20);
 
             typedArray.recycle();
         }
@@ -91,6 +98,9 @@ public class NumberView extends FrameLayout {
         if (number < 100) {
             mTvNumber.setPadding(mPadding, mPadding, mPadding, mPadding);
             mTvNumber.setBackground(mBgCircle);
+            FrameLayout.LayoutParams params = (LayoutParams) mTvNumber.getLayoutParams();
+            params.width = mWhenCycleSize;
+            params.height = mWhenCycleSize;
         } else {
             if (mShowPlusWhen3Dight) {
                 numberStr = "99+";
@@ -149,7 +159,7 @@ public class NumberView extends FrameLayout {
     public void setTextSize3(float textSize3) {
         mTextSize3 = textSize3;
     }
-    
+
     public void setTextColor(int color) {
         mTvNumber.setTextColor(color);
     }
