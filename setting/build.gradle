@@ -8,7 +8,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
     }
 
     buildTypes {
@@ -42,7 +42,7 @@ ext {
     siteUrl = 'https://github.com/qbaowei/settingitem'
     gitUrl = 'https://github.com/qbaowei/settingitem.git'
 
-    libraryVersion = '1.0'
+    libraryVersion = '2.0'
 
     developerId = 'qinbaowei'
     developerName = 'qinbaowei'
