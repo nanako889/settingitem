@@ -8,7 +8,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
-        versionName "1.9"
+        versionName "1.0"
     }
 
     buildTypes {
@@ -22,4 +22,31 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'settingitem'
+
+    publishedGroupId = 'com.qbw.settingitem'
+    libraryName = 'settingitem'
+    artifact = 'settingitem'
+
+    libraryDescription = '常用的加密算法,AES,MD5,RSA,BASE64集合.'
+
+    siteUrl = 'https://github.com/qbaowei/settingitem'
+    gitUrl = 'https://github.com/qbaowei/settingitem.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'qinbaowei'
+    developerName = 'qinbaowei'
+    developerEmail = 'qbaowei@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    apply from: 'bintray_install.gradle'
+    apply from: 'bintray_upload.gradle'
 }
